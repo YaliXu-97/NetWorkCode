@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"> </script>
+    <style type="text/css">
+        div.bar {
+            display: inline-block;
+            width: 20px;
+            height: 75px;
+            margin-right: 2px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    var dataset = [ 10, 20, 30, 40, 50 ];
+    d3.select("body").selectAll("div")
+        .data(dataset)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", function(d) {
+            var barHeight = d *3;
+            return barHeight + "px";
+        });
+</script>
+</body>
+</html>

@@ -31,7 +31,7 @@ public class TCPClient {
         while ((len=fis.read(bytes))!=-1){
             os.write(bytes,0,len);
         }
-        socket.shutdownOutput();
+        socket.shutdownOutput();//关闭客户端的输出流。相当于给流中加入一个结束标志-1
         InputStream is=socket.getInputStream();
         while ((len=is.read(bytes))!=-1){
             System.out.println(new String(bytes,0,len));
